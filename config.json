@@ -1,0 +1,9 @@
+{
+    "token": "Bot Tokeninizi Giriniz",
+    "secret": "Bot Secretinizi Giriniz",
+    "clientId": "Bot ID'nizi Giriniz",
+    "callbackUrl": "Callback URL'niz (videoda anlatıyorum nasıl ayarladığınızı)",
+    "logkanalId": "Log Kanal ID'sini Giriniz",
+    "guildId": "Sunucu ID'sini Giriniz",
+    "adminRole": "Yetkili Rolünü Giriniz"
+}

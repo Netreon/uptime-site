@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Umut Uptime</title>
+</head>
+<body>
+  <nav class="bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 flex items-center">
+            <a class="text-gray-300 px-3 py-2 rounded-md text-lg font-medium ml-2" href="/">Umut Uptime</a>
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <a href="nedenbiz" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Neden Biz?</a>
+              <a href="linklerim" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Linklerim</a>
+              <a href="ekle" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Uptime Ekle</a>
+              <a href="iletisim" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">İletişim</a>
+              <a href="sss" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">S.S.S.</a>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <% if (user) { %>
+            <div class="relative inline-block text-left">
+              <div>
+                <button type="button" class="inline-flex justify-center w-full rounded-md shadow-sm bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" id="dropdown-menu-button">
+                  <%-user.username%>
+                </button>
+              </div>
+              <div class="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden" id="dropdown-menu" aria-labelledby="dropdown-menu-button" role="menu">
+                <div class="py-1" role="none">
+                    <a href="/linklerim" class="block px-4 py-2 text-sm text-white hover:bg-gray-700" role="menuitem">Linklerim</a>
+                    <a href="/admin" class="block px-4 py-2 text-sm text-white hover:bg-gray-700" role="menuitem">Admin Panel</a>
+                    <a href="/logout" class="block px-4 py-2 text-sm text-white hover:bg-gray-700" role="menuitem">Çıkış Yap</a>
+                </div>
+              </div>
+            </div>
+          <% } else { %>
+            <a href="/giris" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Giriş Yap</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <script src="https://cdn.tailwindcss.com/2.2.19/tailwind.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const dropdownButton = document.getElementById("dropdown-menu-button");
+      const dropdownMenu = document.getElementById("dropdown-menu");
+
+      dropdownButton.addEventListener("click", function() {
+        dropdownMenu.classList.toggle("hidden");
+      });
+    });
+  </script>
+</body>
+</html>
